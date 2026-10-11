@@ -1,0 +1,344 @@
+[
+  {
+    "file": "尘土与债务_V51.5.2_道路六向资源与地图入口修复版.html",
+    "path": "versions/尘土与债务_V51.5.2_道路六向资源与地图入口修复版.html",
+    "version": "51.5.2",
+    "bytes": 1357704,
+    "sha256": "4352308216a476b9885bfb569ad20b5f8d64277e1fc7d129b2a1b569a555ebdd",
+    "kind": "游戏",
+    "recommended": true
+  },
+  {
+    "file": "尘土与债务_V51.5.1_性能优化与驿道旋转拐角版.html",
+    "path": "versions/尘土与债务_V51.5.1_性能优化与驿道旋转拐角版.html",
+    "version": "51.5.1",
+    "bytes": 1321485,
+    "sha256": "23bb6ca2676f65cbd2c76033d4098e87f53268399d5aaf2207c82189d6d6211e",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V51.5_地块与物件视觉设定表.html",
+    "path": "versions/尘土与债务_V51.5_地块与物件视觉设定表.html",
+    "version": "51.5",
+    "bytes": 37122,
+    "sha256": "eac330b6b2869135af9db4df5b375c1c2b4a9976fadc29d02c6b06587d2892bb",
+    "kind": "设计参考",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V51.5_核心地貌重构与SVG资源统一版.html",
+    "path": "versions/尘土与债务_V51.5_核心地貌重构与SVG资源统一版.html",
+    "version": "51.5",
+    "bytes": 1320124,
+    "sha256": "0a8b50ec78c15ba0b149a05b5079fc3ab683a16aec6be98841d964f30c8c25a2",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V51.4_生态密度边界混色与普通追捕统一版.html",
+    "path": "versions/尘土与债务_V51.4_生态密度边界混色与普通追捕统一版.html",
+    "version": "51.4",
+    "bytes": 1189922,
+    "sha256": "aeabf4b6b839816751b617240934034ea47588f832d3c047ff8cfe028df5a0fd",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V51.3_地貌随机性生态显现与全图视野版.html",
+    "path": "versions/尘土与债务_V51.3_地貌随机性生态显现与全图视野版.html",
+    "version": "51.3",
+    "bytes": 1173541,
+    "sha256": "06796ca87dd3f7791bc404c1e763b64658ca95f02f0b787733899857bf1337f2",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V51.1_自然地貌比例与生态修复版.html",
+    "path": "versions/尘土与债务_V51.1_自然地貌比例与生态修复版.html",
+    "version": "51.1",
+    "bytes": 1158561,
+    "sha256": "4de70c1786421d5a16d2dde3c43c302cc66c28f7b1448c676262bcad638a81c9",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V51_自然世界与淘金AI节奏版.html",
+    "path": "versions/尘土与债务_V51_自然世界与淘金AI节奏版.html",
+    "version": "51",
+    "bytes": 1151677,
+    "sha256": "cc4c8b2d977a46889ac940c4a51a267d18c474ca85275e776de7a2ce497700d2",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50.5.2_秘籍双入口与赌场借款直连修复版.html",
+    "path": "versions/尘土与债务_V50.5.2_秘籍双入口与赌场借款直连修复版.html",
+    "version": "50.5.2",
+    "bytes": 1134350,
+    "sha256": "6b6e7c8f186c1ec4430ef69384d2eb9f8503a2ced21fa48eed77af681651eeaf",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50.5.1_秘籍与赌场借款修复版.html",
+    "path": "versions/尘土与债务_V50.5.1_秘籍与赌场借款修复版.html",
+    "version": "50.5.1",
+    "bytes": 1136227,
+    "sha256": "6c4e77fdddf3bbd56f07c0aa412d1b1bdf45152b948c8bd1cf296d32f3f6ab77",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50.5_AI追逃骑马交锋与后门版.html",
+    "path": "versions/尘土与债务_V50.5_AI追逃骑马交锋与后门版.html",
+    "version": "50.5",
+    "bytes": 1134405,
+    "sha256": "16865598bad65661535614f9823add5a56b9beb544907bd827f4bd5cc66f5fca",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50.4_挖掘奖励与随机背包修复版.html",
+    "path": "versions/尘土与债务_V50.4_挖掘奖励与随机背包修复版.html",
+    "version": "50.4",
+    "bytes": 1110007,
+    "sha256": "cef3cfcb97791066a22f7d8d829105b235714d1d35397680cad6f68d1190247e",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50.3_藏宝图实体化与地图接缝修复版.html",
+    "path": "versions/尘土与债务_V50.3_藏宝图实体化与地图接缝修复版.html",
+    "version": "50.3",
+    "bytes": 1106075,
+    "sha256": "3d131ba622196fab963fc90c3696138d86ade62af01162447f3ba5bc4b5f2add",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50.2_共用追捕地图_永夜淘金重制版.html",
+    "path": "versions/尘土与债务_V50.2_共用追捕地图_永夜淘金重制版.html",
+    "version": "50.2",
+    "bytes": 1096794,
+    "sha256": "f200e7169e697c1a8a842fec21b93e5bd2aaaf2cb4c2d8b43aa675f7bbfdcad8",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50.1_情报与无尽模式修复版.html",
+    "path": "versions/尘土与债务_V50.1_情报与无尽模式修复版.html",
+    "version": "50.1",
+    "bytes": 1044279,
+    "sha256": "6f1b431813579256df151ce9eb530adf0e41eb8c3580352e2c34e3b123c05fab",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V50_杠杆永夜淘金版.html",
+    "path": "versions/尘土与债务_V50_杠杆永夜淘金版.html",
+    "version": "50",
+    "bytes": 1041887,
+    "sha256": "ff057709cfb2cd9897421eea38bb0d80ab87bb1e1edf72341d890c79d3519e2f",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V49.3_追捕系统作用域修复_完整版.html",
+    "path": "versions/尘土与债务_V49.3_追捕系统作用域修复_完整版.html",
+    "version": "49.3",
+    "bytes": 975097,
+    "sha256": "ad8bac2fbe16b5fc2728612b0fce813f9ea4ee0917797e9f75fa589e040ab631",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V45_环境音与追捕AI优化.html",
+    "path": "versions/尘土与债务_V45_环境音与追捕AI优化.html",
+    "version": "45",
+    "bytes": 886851,
+    "sha256": "99da5cc699e9f89db7f204aeaa8ac70c94a9094284af2afcbe844cac1769aa79",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V45_追捕与酒馆优化.html",
+    "path": "versions/尘土与债务_V45_追捕与酒馆优化.html",
+    "version": "45",
+    "bytes": 871301,
+    "sha256": "a0bd9f30bec000838c2f583a35e98336aaf7b1c7dfc31e337d0ad11dbe4f2b1a",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V44_完整配音音效版.html",
+    "path": "versions/尘土与债务_V44_完整配音音效版.html",
+    "version": "44",
+    "bytes": 35996152,
+    "sha256": "4fc97fa635c2849af61023cd9aa49fcd99fd331e5f69eed1b544c1c6b6fb39f0",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V44_按场景精准配音版 (1).html",
+    "path": "versions/尘土与债务_V44_按场景精准配音版 (1).html",
+    "version": "44",
+    "bytes": 883591,
+    "sha256": "7c03df6e49b619f0d565f093bdca31adbc5ede5fca6898dc0b13d190eeba6fb7",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V44_按场景精准配音版.html",
+    "path": "versions/尘土与债务_V44_按场景精准配音版.html",
+    "version": "44",
+    "bytes": 883591,
+    "sha256": "7c03df6e49b619f0d565f093bdca31adbc5ede5fca6898dc0b13d190eeba6fb7",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V44_统一马匹角色装扮与大盗肖像.html",
+    "path": "versions/尘土与债务_V44_统一马匹角色装扮与大盗肖像.html",
+    "version": "44",
+    "bytes": 860044,
+    "sha256": "ba073be0df308645988a22ad6a711c4ae5b4ffb2d2e5724bed0ae05e8cf29365",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V44_音频混音修正版.html",
+    "path": "versions/尘土与债务_V44_音频混音修正版.html",
+    "version": "44",
+    "bytes": 37123636,
+    "sha256": "082f73e494efaf93d6d477c52a74e34fa738244fb8fc8f07ba53efe997a5a369",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V43_窗内闪电音效与低模马厩.html",
+    "path": "versions/尘土与债务_V43_窗内闪电音效与低模马厩.html",
+    "version": "43",
+    "bytes": 847203,
+    "sha256": "a9121133500aeaa549906e83b5b1012c039182574e917ed8a3fcb87b71a94298",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V42_窗户与装饰入口恢复版.html",
+    "path": "versions/尘土与债务_V42_窗户与装饰入口恢复版.html",
+    "version": "42",
+    "bytes": 808957,
+    "sha256": "90ec64cb47a0e33decb3c212edf9703256faae4930ad73743a8385b0b1b35393",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V42_窗贴纸闪电音效与图像化马厩.html",
+    "path": "versions/尘土与债务_V42_窗贴纸闪电音效与图像化马厩.html",
+    "version": "42",
+    "bytes": 851973,
+    "sha256": "94d5145d5f04a268dc709c10f4fa5439c03deb8b68aa12f347203f233af481c8",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V40_主角窗景与布置修正版.html",
+    "path": "versions/尘土与债务_V40_主角窗景与布置修正版.html",
+    "version": "40",
+    "bytes": 803986,
+    "sha256": "d6e8a694dfa7ea29bcab90656a53e14c14a2d3cbe400c4a2c4b535fb67a2fa84",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V40_主页面装饰系统修复.html",
+    "path": "versions/尘土与债务_V40_主页面装饰系统修复.html",
+    "version": "40",
+    "bytes": 805681,
+    "sha256": "bcfe3ee9a635551a1cc2f4e1c28260ed228555bdd85ca0359ca669a5369468b0",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V39_主角位置与跟随相机.html",
+    "path": "versions/尘土与债务_V39_主角位置与跟随相机.html",
+    "version": "39",
+    "bytes": 814977,
+    "sha256": "5f29318595fabea32366b317dbde9f8915340e5d7f4d96fb6a16cf95d3fc85cf",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V39_真实生效修正版.html",
+    "path": "versions/尘土与债务_V39_真实生效修正版.html",
+    "version": "39",
+    "bytes": 803293,
+    "sha256": "74f06a9416069d9787699454abba7fba5feb13bc96b09df0a8c34f7d251780b7",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V38_主界面与情报体验修正版.html",
+    "path": "versions/尘土与债务_V38_主界面与情报体验修正版.html",
+    "version": "38",
+    "bytes": 814357,
+    "sha256": "28bde933d7c03005dbebbaf0b84e0beba6c98d5d81af0ef9055f7191b1161453",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V36_情报生存与真实视野优化版.html",
+    "path": "versions/尘土与债务_V36_情报生存与真实视野优化版.html",
+    "version": "36",
+    "bytes": 726062,
+    "sha256": "bea36765c0f48a51237881a66e3697f2b6dffbd97614c05d3f7a3b781e961db9",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V35_动态追击与大盘终版.html",
+    "path": "versions/尘土与债务_V35_动态追击与大盘终版.html",
+    "version": "35",
+    "bytes": 701218,
+    "sha256": "07e54e46ed20ca009e9fe214543b37fc339d3462d343ff86abbb1e902426d308",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_V33_股票轮动事件优化版.html",
+    "path": "versions/尘土与债务_V33_股票轮动事件优化版.html",
+    "version": "33",
+    "bytes": 652218,
+    "sha256": "f48ab824537d570dde2b3c7a7f643e832848c39777e589293adfd6df1cdd4f81",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_welcome初始化修复版.html",
+    "path": "versions/尘土与债务_welcome初始化修复版.html",
+    "version": "早期版本",
+    "bytes": 869000,
+    "sha256": "fc95ffbaeef5e99a7e3ab10b6082eb254e49229f2ac5f8e98a1f541291d83107",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_追捕音效AI界面环境升级版 (1).html",
+    "path": "versions/尘土与债务_追捕音效AI界面环境升级版 (1).html",
+    "version": "早期版本",
+    "bytes": 881854,
+    "sha256": "47ec670a12308d47255ed7e91366e066158cc573471dce6478e06da6b0e4b6e5",
+    "kind": "游戏",
+    "recommended": false
+  },
+  {
+    "file": "尘土与债务_追捕音效AI界面环境升级版.html",
+    "path": "versions/尘土与债务_追捕音效AI界面环境升级版.html",
+    "version": "早期版本",
+    "bytes": 881854,
+    "sha256": "47ec670a12308d47255ed7e91366e066158cc573471dce6478e06da6b0e4b6e5",
+    "kind": "游戏",
+    "recommended": false
+  }
+]

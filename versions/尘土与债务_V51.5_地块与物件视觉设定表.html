@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尘土与债务 V51.5 · 地块与物件视觉设定表</title>
+<style>
+:root{
+  --bg:#17110d;--panel:#241a13;--panel2:#302218;--line:#74563a;
+  --paper:#e3cfa7;--paper2:#c3a372;--gold:#d4a854;--ink:#291b12;
+  --cream:#f0dfbd;--muted:#ae9875;--red:#7c382b;--green:#5e704b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:radial-gradient(circle at 50% 0,#352417 0,#17110d 48%,#0d0907 100%);color:var(--cream);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+body{padding:22px}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.shell{max-width:1680px;margin:auto}
+.hero{position:relative;overflow:hidden;padding:24px 26px;border:1px solid #7e5c39;background:linear-gradient(135deg,rgba(54,38,27,.98),rgba(26,18,13,.98));box-shadow:0 22px 60px rgba(0,0,0,.42)}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(110deg,transparent 0 47%,rgba(238,200,126,.4) 48% 49%,transparent 50%),repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 5px)}
+.hero h1{position:relative;margin:0 0 8px;font:900 32px Georgia,"Microsoft YaHei",serif;color:#efd08a;letter-spacing:.04em}
+.hero p{position:relative;margin:0;max-width:1050px;color:#cdb897;font-size:13px;line-height:1.75}
+.hero-tags{position:relative;display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.hero-tags span{padding:5px 8px;border:1px solid #84603d;background:#211710;color:#e4c999;font-size:10px}
+.toolbar{position:sticky;top:0;z-index:20;margin:14px 0;padding:10px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:rgba(22,15,11,.95);border:1px solid #65482f;backdrop-filter:blur(9px);box-shadow:0 10px 28px rgba(0,0,0,.25)}
+.toolbar button,.toolbar select{border:1px solid #765638;background:#34251b;color:#ead6b0;padding:8px 11px}.toolbar button:hover{background:#4b3423}.toolbar button.gold{background:#a77638;border-color:#d5ac68;color:#21150d;font-weight:900}.toolbar button.danger{background:#6f3328}.toolbar .spacer{flex:1}.status{font-size:10px;color:#bda682}
+.section{margin-top:16px;border:1px solid #64482f;background:rgba(28,20,15,.94);box-shadow:0 14px 38px rgba(0,0,0,.24)}
+.section-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid #654a32;background:linear-gradient(90deg,#38271c,#261a13)}
+.section-head h2{margin:0;font:900 21px Georgia,"Microsoft YaHei",serif;color:#e7c57d}.section-head p{margin:0;color:#aa9574;font-size:10px}
+.table-wrap{overflow:auto;max-height:760px}
+table{width:100%;border-collapse:separate;border-spacing:0;min-width:1380px}
+th{position:sticky;top:0;z-index:5;background:#211710;color:#d8bd8d;font-size:10px;letter-spacing:.06em;text-align:left;border-bottom:1px solid #79583a;padding:9px}
+td{padding:9px;border-bottom:1px solid rgba(125,89,56,.28);vertical-align:top;background:rgba(235,215,175,.035)}
+tr:hover td{background:rgba(225,190,124,.065)}
+.preview-cell{width:210px}.tile-canvas{display:block;width:190px;height:118px;background:linear-gradient(#2d2119,#17110e);border:1px solid #6c4d32;image-rendering:auto}
+.field{width:100%;padding:7px;border:1px solid #8c6a45;background:#dfc99f;color:#2c1c12}.field.small{width:82px}.field.note{min-width:235px;min-height:80px;resize:vertical;line-height:1.5}
+.color-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}.color-box{display:grid;grid-template-columns:36px 1fr;gap:5px;align-items:center;font-size:9px;color:#bda887}.color-box input[type=color]{width:36px;height:31px;padding:1px;border:1px solid #866140;background:#1e1510}.color-box code{font-size:9px;color:#d7bb88}
+.badges{display:flex;gap:4px;flex-wrap:wrap;max-width:280px}.badge{padding:3px 5px;border:1px solid #82613f;background:#433024;color:#e4cfaa;font-size:8px}.badge.block{background:#6b3027}.badge.new{background:#546243}.badge.warn{background:#795c2f}
+.item-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;padding:12px}
+.item-card{position:relative;padding:10px;background:linear-gradient(150deg,#d9c39b,#b89566);color:#2c1c13;border:1px solid #87633f;box-shadow:0 9px 18px rgba(0,0,0,.18)}
+.item-card.disabled{filter:grayscale(.78);opacity:.56}.item-card canvas{display:block;width:100%;height:105px;background:linear-gradient(#7e6a4e,#5f4b37);border:1px solid #79583d;margin-bottom:8px}.item-card h3{margin:0;font:900 16px Georgia,"Microsoft YaHei",serif}.item-card small{display:block;color:#6b4e34;margin:3px 0 7px}.item-card p{min-height:46px;margin:0;font-size:10px;line-height:1.55;color:#563e2b}.item-card label{display:flex;gap:6px;align-items:center;margin-top:8px;font-size:10px;font-weight:900}.item-card input[type=checkbox]{accent-color:#754326}
+.combo-layout{display:grid;grid-template-columns:minmax(500px,1.3fr) minmax(330px,.7fr);gap:14px;padding:14px}.combo-stage{min-height:390px;display:grid;place-items:center;background:radial-gradient(circle at 50% 32%,#493726,#18110d 72%);border:1px solid #684a30}.combo-stage canvas{width:min(100%,680px);height:auto}.combo-controls{padding:13px;background:#d7c092;color:#2c1c12;border:1px solid #8c6742}.combo-controls h3{margin:0 0 10px;font:900 18px Georgia,serif}.combo-controls label{display:block;margin:9px 0 4px;font-size:10px;font-weight:900;color:#64462f}.combo-controls select,.combo-controls input[type=range]{width:100%}.combo-controls select{padding:8px;background:#f0dfbd;border:1px solid #815e3c}.combo-note{margin-top:12px;padding:10px;background:#3b291d;color:#e8d2a8;font-size:10px;line-height:1.6;border-left:4px solid #bf8742}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:9px;padding:12px}.legend-card{padding:10px;background:#cfb787;color:#2b1d14;border:1px solid #8d6843}.legend-card b{display:block;color:#6c3527;margin-bottom:4px}.legend-card p{margin:0;font-size:10px;line-height:1.55}
+.code-box{padding:12px}.code-box textarea{width:100%;height:260px;background:#17110d;color:#dfc99e;border:1px solid #745337;padding:12px;font:11px/1.55 Consolas,monospace;resize:vertical}
+.footer{padding:18px;text-align:center;color:#927c60;font-size:10px}
+@media(max-width:900px){body{padding:8px}.combo-layout{grid-template-columns:1fr}.hero h1{font-size:24px}.toolbar{position:static}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <section class="hero">
+    <h1>尘土与债务 V51.5 · 地块与物件视觉设定表</h1>
+    <p>这是一个独立的设计预览页，不会修改游戏。地块颜色、名称、通行级别和备注可以直接编辑；下方可以逐个查看植物、动物、岩石、农场、道路与河流设施，再用“组合预览”检查它们放在同一格时是否协调。</p>
+    <div class="hero-tags"><span>普通追捕保留原尺寸与随机外形</span><span>无尽模式使用大地图与区块扩展</span><span>每格最多一个主要生态物件</span><span>山顶 / 山体 / 山脚分层</span><span>道路对角必须补正交格</span></div>
+  </section>
+
+  <div class="toolbar">
+    <select id="categoryFilter"><option value="all">显示全部物件</option><option value="plant">植物</option><option value="animal">动物</option><option value="rock">岩石与山体</option><option value="farm">农场设施</option><option value="road">道路设施</option><option value="water">河流设施</option></select>
+    <button id="saveBtn">保存到浏览器</button>
+    <button id="resetBtn" class="danger">恢复初始设定</button>
+    <button id="exportBtn" class="gold">导出设定 JSON</button>
+    <span class="spacer"></span><span class="status" id="status">尚未修改</span>
+  </div>
+
+  <section class="section">
+    <div class="section-head"><div><h2>一、地块视觉与规则</h2><p>“当前代码名”用于对照现有系统；山地会在 V51.5 中拆分成三层。</p></div></div>
+    <div class="table-wrap"><table><thead><tr><th>实际预览</th><th>显示名称</th><th>当前/建议代码名</th><th>地表配色</th><th>通行级别</th><th>允许的主要物件</th><th>生成与视觉备注</th><th>采用</th></tr></thead><tbody id="terrainRows"></tbody></table></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>二、地块上方的物件</h2><p>关闭“保留”即可标记为不需要。物件颜色会尽量服从地块色调，而不是全部画成鲜绿色。</p></div></div>
+    <div class="item-grid" id="itemGrid"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>三、组合预览</h2><p>选择一个地块和一个物件，检查比例、颜色与拥挤程度。</p></div></div>
+    <div class="combo-layout">
+      <div class="combo-stage"><canvas id="comboCanvas" width="760" height="430"></canvas></div>
+      <div class="combo-controls">
+        <h3>组合参数</h3>
+        <label>地块</label><select id="comboTerrain"></select>
+        <label>主要物件</label><select id="comboItem"></select>
+        <label>物件密度 <span id="densityValue">1</span></label><input id="density" type="range" min="0" max="3" step="1" value="1">
+        <label>相邻地块混色</label><select id="neighborTerrain"><option value="none">不显示相邻地块</option></select>
+        <label>道路叠加</label><select id="roadMode"><option value="none">无道路</option><option value="straight">直路</option><option value="corner">直角道路</option><option value="diagonal-fixed">对角路径补正交格</option></select>
+        <div class="combo-note">建议最终规则：地块本身只画地表纹理；完整植物、动物、岩石和设施统一交给一套生态层。一个格子只能拥有一个主要物件，农场设施与自然植物不得重叠。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>四、生成约束速览</h2><p>这些不是外观，而是防止再次出现群山、植物叠加与道路断线的硬规则。</p></div></div>
+    <div class="legend">
+      <div class="legend-card"><b>山群后处理</b><p>每个约 4×4 山地区域只保留 1～2 个山顶，其余候选格转为灰褐色岩石山体，外围转为山脚缓坡。</p></div>
+      <div class="legend-card"><b>单格单一主物件</b><p>植物、动物、岩石、农场设施四类最多选择一类；道路和地点格默认禁用自然植物。</p></div>
+      <div class="legend-card"><b>对角道路</b><p>路径若出现 00→11→22，必须在数据层补成 00→01→11→12→22，或选择另一侧的 10、21。</p></div>
+      <div class="legend-card"><b>河流设施</b><p>只有宽度和连续长度达标的大河才生成码头、小船和渡船；窄河优先生成木桥。</p></div>
+      <div class="legend-card"><b>普通追捕</b><p>恢复新手 56、普通 60、困难 64，并保留方形、圆形、六边形、台地等随机外形。</p></div>
+      <div class="legend-card"><b>无尽模式</b><p>保持大地图和区块扩展，但使用同一套地形、道路、山体与生态数据，不再另做一套视觉规则。</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>五、当前设定 JSON</h2><p>你修改后可以复制或下载，之后我可以按照这份设定精确改 V51.5。</p></div></div>
+    <div class="code-box"><textarea id="jsonOutput" spellcheck="false"></textarea></div>
+  </section>
+  <div class="footer">独立视觉稿 · 不读取存档 · 不修改原游戏文件</div>
+</div>
+<script>
+const terrainDefaults=[
+ {id:'plain',name:'开阔平原',code:'plain',base:'#a67c4e',edge:'#725033',move:'标准',items:['黄褐旱草','鼠尾草','少量野花','犬鼠洞','稀疏牛羊'],note:'主体保持黄褐色；草应该接近土色，避免鲜绿。',keep:true},
+ {id:'road',name:'驿道',code:'road',base:'#d0aa6d',edge:'#916a41',move:'最快',items:['电报杆','路牌','废弃马车','桥梁'],note:'两条车辙连续；对角路径必须补正交格。道路格不生成普通植物。',keep:true},
+ {id:'desert',name:'干旱荒漠',code:'desert',base:'#bd8e58',edge:'#805b38',move:'稍慢',items:['仙人掌','风滚草','兽骨','孤石'],note:'赭黄沙土和风纹，物件稀疏。',keep:true},
+ {id:'scrub',name:'灌木荒地',code:'scrub',base:'#7d7657',edge:'#514b39',move:'中等偏慢',items:['灰绿矮灌木','小枯树','倒木'],note:'灰黄与暗橄榄色混合，不出现整片鲜绿植物。',keep:true},
+ {id:'foothill',name:'山脚缓坡',code:'foothill（由 hill 拆分）',base:'#90785b',edge:'#625040',move:'略慢',items:['黄褐草簇','碎石','极少灌木'],note:'平原到山体的过渡层，颜色黄褐中掺灰。',keep:true},
+ {id:'rockbody',name:'岩石山体',code:'rockbody（由 hill 拆分）',base:'#746b61',edge:'#4f4943',move:'明显较慢',items:['岩层裂纹','碎石','巨石','矿洞入口'],note:'没有尖峰，使用灰褐岩面；普通玩家可以通过。',keep:true},
+ {id:'peak',name:'陡峭峰顶',code:'peak（替代 highhill）',base:'#514b46',edge:'#312e2b',move:'阻挡/需装备',items:['峰顶本体'],note:'每个 4×4 山群仅 1～2 格；不再叠加植物或巨石。',keep:true},
+ {id:'snow',name:'薄雪荒原',code:'snow',base:'#aeb5ad',edge:'#737a74',move:'较慢',items:['小雪堆','足迹','极少松树'],note:'灰白雪层下露出黄灰土地，不铺满重复白点。',keep:true},
+ {id:'water',name:'浅水河滩',code:'water',base:'#55747c',edge:'#365158',move:'涉水较慢',items:['芦苇','漂木','湿岸'],note:'可见泥底和细波纹；码头放在相邻岸格。',keep:true},
+ {id:'deepwater',name:'深河 / 湖面',code:'deepwater',base:'#355c6b',edge:'#243d48',move:'通常阻挡',items:['小船','渡船'],note:'大河可有船，窄河不放船。',keep:true},
+ {id:'farmfield',name:'农田与牧场',code:'farmfield',base:'#776c48',edge:'#4c4733',move:'接近平原',items:['围栏','干草垛','水槽','风车','稻草人','牧场动物'],note:'设施与自然植物互斥；田垄略弯，不做绝对笔直条纹。',keep:true}
+];
+const itemDefaults=[
+ {id:'dryGrass',name:'黄褐旱草',category:'plant',terrain:['plain','foothill'],desc:'贴近地块颜色的低矮草簇，是平原最常见的填充，但单格数量要少。',keep:true},
+ {id:'tallGrass',name:'高旱草',category:'plant',terrain:['plain','foothill'],desc:'颜色偏金黄，少量成簇，不与鼠尾草同格。',keep:true},
+ {id:'sage',name:'鼠尾草',category:'plant',terrain:['plain','scrub'],desc:'灰绿而不是鲜绿，适合作为西部平原与灌木地的过渡植物。',keep:true},
+ {id:'wildflowers',name:'稀疏野花',category:'plant',terrain:['plain'],desc:'非常低概率的小色点，用于打破大面积空地，不应形成花田。',keep:true},
+ {id:'brush',name:'矮灌木',category:'plant',terrain:['scrub'],desc:'暗橄榄色、低矮、数量受限；不与旧 drawScrub 植物叠加。',keep:true},
+ {id:'deadwood',name:'枯树与倒木',category:'plant',terrain:['scrub','desert'],desc:'褐色枝干，强化荒凉感。',keep:true},
+ {id:'cactus',name:'仙人掌',category:'plant',terrain:['desert'],desc:'仅荒漠低概率生成；颜色偏灰绿。',keep:true},
+ {id:'pine',name:'稀疏松树',category:'plant',terrain:['snow'],desc:'只在少数雪地边缘和高海拔生成。',keep:true},
+ {id:'smallTree',name:'小乔木',category:'plant',terrain:['scrub'],desc:'低矮风蚀树，不形成森林。',keep:true},
+ {id:'looseRock',name:'碎石',category:'rock',terrain:['foothill','rockbody','desert'],desc:'低矮灰褐色，不能画成尖山。',keep:true},
+ {id:'boulder',name:'巨石',category:'rock',terrain:['rockbody'],desc:'少量大块岩石，和矿洞入口互斥。',keep:true},
+ {id:'rockStrata',name:'岩层与裂纹',category:'rock',terrain:['rockbody'],desc:'作为山体的主视觉，不额外占据一个高峰。',keep:true},
+ {id:'mountainPeak',name:'山顶尖峰',category:'rock',terrain:['peak'],desc:'每个 4×4 山群只放 1～2 个，是唯一真正画尖峰的地块。',keep:true},
+ {id:'mineMouth',name:'矿洞入口',category:'rock',terrain:['rockbody'],desc:'极低概率出现在连续岩石山体边缘。',keep:true},
+ {id:'prairieDog',name:'犬鼠洞',category:'animal',terrain:['plain'],desc:'低矮洞口与一只探头犬鼠，数量很少。',keep:true},
+ {id:'sheepHerd',name:'小型羊群',category:'animal',terrain:['plain','farmfield'],desc:'2～4只为一组，使用水平镜像转向，不做 180°翻转。',keep:true},
+ {id:'cattle',name:'牛群',category:'animal',terrain:['plain','farmfield'],desc:'只在牧场或宽阔平原生成，不能每格都有。',keep:true},
+ {id:'antelope',name:'羚羊',category:'animal',terrain:['plain','desert'],desc:'2只左右的小群，移动速度较快。',keep:true},
+ {id:'fence',name:'木围栏',category:'farm',terrain:['farmfield'],desc:'围出牧场边缘，不与草木重叠。',keep:true},
+ {id:'hay',name:'干草垛',category:'farm',terrain:['farmfield'],desc:'金黄色，与农场地色协调。',keep:true},
+ {id:'trough',name:'饮水槽',category:'farm',terrain:['farmfield'],desc:'木槽中带少量水面反光。',keep:true},
+ {id:'windmill',name:'农场风车',category:'farm',terrain:['farmfield'],desc:'作为小农场远距离识别点，不要每个农场都有。',keep:true},
+ {id:'scarecrow',name:'稻草人',category:'farm',terrain:['farmfield'],desc:'小比例剪影，避免和骑手混淆。',keep:true},
+ {id:'farmhouse',name:'农舍',category:'farm',terrain:['farmfield'],desc:'用于可交互小农场：打听消息、购买干粮和出售物资。',keep:true},
+ {id:'telegraph',name:'电报杆',category:'road',terrain:['road'],desc:'沿主干道路间隔生成，电线方向跟随道路。',keep:true},
+ {id:'signpost',name:'路牌',category:'road',terrain:['road'],desc:'生成在岔路和聚落附近。',keep:true},
+ {id:'wagonWreck',name:'废弃马车',category:'road',terrain:['road','plain'],desc:'道路边低概率出现，不能挡住道路中心。',keep:true},
+ {id:'woodBridge',name:'木桥',category:'road',terrain:['water'],desc:'窄河与道路相交时使用。',keep:true},
+ {id:'dock',name:'小码头',category:'water',terrain:['plain','water'],desc:'只生成在宽河岸边，必须靠近道路、城镇或农场。',keep:true},
+ {id:'rowboat',name:'小划船',category:'water',terrain:['deepwater'],desc:'在宽河与湖面缓慢移动，不出现在水洼。',keep:true},
+ {id:'ferry',name:'渡船',category:'water',terrain:['deepwater'],desc:'连接两岸道路或聚落，数量极少。',keep:true},
+ {id:'reeds',name:'岸边芦苇',category:'water',terrain:['water'],desc:'生成在浅水边缘，不放在深水中央。',keep:true}
+];
+let terrains=structuredClone(terrainDefaults),items=structuredClone(itemDefaults);
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function diamond(ctx,x,y,w,h,base,edge,depth=12){ctx.fillStyle=edge;ctx.beginPath();ctx.moveTo(x-w/2,y);ctx.lineTo(x,y+h/2+depth);ctx.lineTo(x+w/2,y);ctx.lineTo(x,y-h/2+depth);ctx.closePath();ctx.fill();ctx.fillStyle=base;ctx.beginPath();ctx.moveTo(x-w/2,y-depth);ctx.lineTo(x,y-h/2-depth);ctx.lineTo(x+w/2,y-depth);ctx.lineTo(x,y+h/2-depth);ctx.closePath();ctx.fill();ctx.strokeStyle='rgba(35,24,16,.32)';ctx.stroke()}
+function drawTerrain(ctx,t,cx,cy,scale=1){const w=110*scale,h=54*scale;diamond(ctx,cx,cy,w,h,t.base,t.edge,12*scale);ctx.save();ctx.translate(cx,cy-12*scale);ctx.lineCap='round';
+ if(t.id==='plain'){ctx.strokeStyle='#a58a52';ctx.lineWidth=2*scale;for(let i=-2;i<=2;i++){ctx.beginPath();ctx.moveTo(i*12*scale,8*scale);ctx.lineTo((i*12-3)*scale,-3*scale);ctx.stroke()}}
+ if(t.id==='road'){ctx.strokeStyle='#866442';ctx.lineWidth=4*scale;ctx.beginPath();ctx.moveTo(-40*scale,-18*scale);ctx.lineTo(40*scale,18*scale);ctx.stroke();ctx.strokeStyle='#5e4934';ctx.lineWidth=1.5*scale;ctx.setLineDash([5*scale,4*scale]);ctx.beginPath();ctx.moveTo(-38*scale,-14*scale);ctx.lineTo(38*scale,20*scale);ctx.stroke();ctx.setLineDash([])}
+ if(t.id==='desert'){ctx.strokeStyle='rgba(239,205,143,.55)';ctx.lineWidth=1.5*scale;for(let i=-1;i<=1;i++){ctx.beginPath();ctx.arc(i*18*scale,4*scale,15*scale,Math.PI,Math.PI*1.7);ctx.stroke()}}
+ if(t.id==='scrub'){ctx.fillStyle='#606348';for(let i=-2;i<=2;i++){ctx.beginPath();ctx.arc(i*13*scale,(i%2)*5*scale,5*scale,0,Math.PI*2);ctx.fill()}}
+ if(t.id==='foothill'){ctx.fillStyle='rgba(103,87,67,.42)';ctx.beginPath();ctx.moveTo(-45*scale,10*scale);ctx.quadraticCurveTo(0,-12*scale,45*scale,10*scale);ctx.lineTo(35*scale,18*scale);ctx.lineTo(-35*scale,18*scale);ctx.closePath();ctx.fill()}
+ if(t.id==='rockbody'){ctx.fillStyle='#625a52';ctx.beginPath();ctx.moveTo(-42*scale,14*scale);ctx.lineTo(-25*scale,-9*scale);ctx.lineTo(-5*scale,-2*scale);ctx.lineTo(15*scale,-13*scale);ctx.lineTo(43*scale,13*scale);ctx.closePath();ctx.fill();ctx.strokeStyle='#938777';ctx.lineWidth=1.5*scale;ctx.beginPath();ctx.moveTo(-20*scale,-4*scale);ctx.lineTo(8*scale,10*scale);ctx.moveTo(8*scale,-7*scale);ctx.lineTo(23*scale,7*scale);ctx.stroke()}
+ if(t.id==='peak'){ctx.fillStyle='#403b37';ctx.beginPath();ctx.moveTo(-34*scale,18*scale);ctx.lineTo(-7*scale,-40*scale);ctx.lineTo(2*scale,-8*scale);ctx.lineTo(16*scale,-29*scale);ctx.lineTo(38*scale,18*scale);ctx.closePath();ctx.fill();ctx.fillStyle='#81796f';ctx.beginPath();ctx.moveTo(-7*scale,-40*scale);ctx.lineTo(2*scale,-8*scale);ctx.lineTo(-5*scale,4*scale);ctx.closePath();ctx.fill()}
+ if(t.id==='snow'){ctx.fillStyle='rgba(247,248,241,.7)';ctx.beginPath();ctx.ellipse(-18*scale,1*scale,18*scale,6*scale,0,0,Math.PI*2);ctx.ellipse(19*scale,12*scale,22*scale,7*scale,0,0,Math.PI*2);ctx.fill()}
+ if(t.id==='water'||t.id==='deepwater'){ctx.strokeStyle=t.id==='deepwater'?'#8fb2bf':'#9ebec4';ctx.lineWidth=1.6*scale;for(let i=-2;i<=2;i++){ctx.beginPath();ctx.arc(i*17*scale,4*scale+(i%2)*5*scale,10*scale,Math.PI,Math.PI*1.85);ctx.stroke()}}
+ if(t.id==='farmfield'){ctx.strokeStyle='#4e5437';ctx.lineWidth=2*scale;for(let i=-3;i<=3;i++){ctx.beginPath();ctx.moveTo((-42+i*12)*scale,-10*scale);ctx.lineTo((-2+i*12)*scale,18*scale);ctx.stroke()}}
+ ctx.restore()}
+function drawItem(ctx,id,cx,cy,scale=1){ctx.save();ctx.translate(cx,cy);ctx.lineCap='round';ctx.lineJoin='round';
+ const s=scale;
+ if(['dryGrass','tallGrass'].includes(id)){ctx.strokeStyle=id==='dryGrass'?'#a78d52':'#b39b59';ctx.lineWidth=2*s;const n=id==='tallGrass'?7:4;for(let i=0;i<n;i++){const x=(i-(n-1)/2)*5*s;ctx.beginPath();ctx.moveTo(x,8*s);ctx.lineTo(x+(i%2?3:-3)*s,(-5-(i%3)*4)*s);ctx.stroke()}}
+ else if(id==='sage'){ctx.fillStyle='#777558';for(const [x,y,r] of [[-8,2,7],[1,-2,8],[10,3,6]]){ctx.beginPath();ctx.arc(x*s,y*s,r*s,0,Math.PI*2);ctx.fill()}}
+ else if(id==='wildflowers'){for(let i=0;i<7;i++){ctx.fillStyle=['#d2b36b','#b8755e','#ddd2ae'][i%3];ctx.beginPath();ctx.arc((-14+i*5)*s,(i%2)*4*s,2*s,0,Math.PI*2);ctx.fill()}}
+ else if(id==='brush'){ctx.fillStyle='#596248';for(let i=-2;i<=2;i++){ctx.beginPath();ctx.moveTo(i*9*s,8*s);ctx.lineTo((i*9-6)*s,-4*s);ctx.lineTo(i*9*s,1*s);ctx.lineTo((i*9+7)*s,-8*s);ctx.lineTo((i*9+4)*s,9*s);ctx.closePath();ctx.fill()}}
+ else if(id==='deadwood'){ctx.strokeStyle='#694c35';ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(-24*s,8*s);ctx.lineTo(18*s,-11*s);ctx.moveTo(-2*s,-2*s);ctx.lineTo(14*s,10*s);ctx.stroke()}
+ else if(id==='cactus'){ctx.fillStyle='#657e4b';ctx.fillRect(-4*s,-25*s,8*s,34*s);ctx.fillRect(-15*s,-12*s,13*s,6*s);ctx.fillRect(2*s,-5*s,15*s,6*s);ctx.fillRect(-15*s,-18*s,6*s,13*s);ctx.fillRect(11*s,-12*s,6*s,13*s)}
+ else if(id==='pine'||id==='smallTree'){ctx.fillStyle='#513b2b';ctx.fillRect(-2*s,-9*s,4*s,22*s);ctx.fillStyle=id==='pine'?'#405244':'#5d674b';for(let i=0;i<3;i++){ctx.beginPath();ctx.moveTo(0,(-33+i*9)*s);ctx.lineTo((-15+i*2)*s,(-6+i*7)*s);ctx.lineTo((15-i*2)*s,(-6+i*7)*s);ctx.closePath();ctx.fill()}}
+ else if(id==='looseRock'||id==='boulder'||id==='rockStrata'){ctx.fillStyle=id==='boulder'?'#71685f':'#817669';ctx.beginPath();ctx.moveTo(-20*s,8*s);ctx.lineTo(-13*s,-10*s);ctx.lineTo(2*s,-17*s);ctx.lineTo(22*s,7*s);ctx.closePath();ctx.fill();ctx.strokeStyle='#a09280';ctx.lineWidth=2*s;ctx.beginPath();ctx.moveTo(-10*s,-4*s);ctx.lineTo(7*s,7*s);ctx.moveTo(3*s,-11*s);ctx.lineTo(12*s,2*s);ctx.stroke()}
+ else if(id==='mountainPeak'){ctx.fillStyle='#413d39';ctx.beginPath();ctx.moveTo(-28*s,14*s);ctx.lineTo(-5*s,-40*s);ctx.lineTo(4*s,-10*s);ctx.lineTo(14*s,-27*s);ctx.lineTo(31*s,14*s);ctx.closePath();ctx.fill()}
+ else if(id==='mineMouth'){ctx.fillStyle='#3c342e';ctx.beginPath();ctx.arc(0,0,20*s,Math.PI,0);ctx.lineTo(20*s,15*s);ctx.lineTo(-20*s,15*s);ctx.closePath();ctx.fill();ctx.strokeStyle='#836443';ctx.lineWidth=3*s;ctx.strokeRect(-18*s,-14*s,36*s,28*s)}
+ else if(id==='prairieDog'){ctx.fillStyle='#6d503b';ctx.beginPath();ctx.ellipse(0,9*s,20*s,6*s,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#9a6f48';ctx.fillRect(-4*s,-13*s,8*s,23*s);ctx.beginPath();ctx.arc(0,-15*s,7*s,0,Math.PI*2);ctx.fill()}
+ else if(['sheepHerd','cattle','antelope'].includes(id)){const count=id==='cattle'?2:3;for(let i=0;i<count;i++){const x=(i-(count-1)/2)*22*s;ctx.fillStyle=id==='sheepHerd'?'#ded7c5':id==='cattle'?'#76503b':'#ad7a48';ctx.beginPath();ctx.ellipse(x,0,11*s,7*s,0,0,Math.PI*2);ctx.fill();ctx.fillStyle=id==='sheepHerd'?'#55463c':'#6a432f';ctx.beginPath();ctx.arc(x+10*s,-2*s,5*s,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#49382c';ctx.lineWidth=2*s;ctx.beginPath();ctx.moveTo(x-5*s,5*s);ctx.lineTo(x-6*s,14*s);ctx.moveTo(x+4*s,5*s);ctx.lineTo(x+5*s,14*s);ctx.stroke()}}
+ else if(id==='fence'){ctx.strokeStyle='#79583d';ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(-30*s,4*s);ctx.lineTo(30*s,10*s);ctx.moveTo(-23*s,-10*s);ctx.lineTo(-23*s,17*s);ctx.moveTo(20*s,-5*s);ctx.lineTo(20*s,20*s);ctx.stroke()}
+ else if(id==='hay'){ctx.fillStyle='#b79349';ctx.fillRect(-20*s,-10*s,40*s,23*s);ctx.strokeStyle='#75572f';ctx.lineWidth=2*s;ctx.strokeRect(-20*s,-10*s,40*s,23*s)}
+ else if(id==='trough'){ctx.fillStyle='#594437';ctx.fillRect(-26*s,-5*s,52*s,14*s);ctx.fillStyle='#73949a';ctx.fillRect(-20*s,-2*s,40*s,5*s)}
+ else if(id==='windmill'){ctx.strokeStyle='#65503d';ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(0,18*s);ctx.lineTo(0,-35*s);ctx.stroke();ctx.lineWidth=2*s;for(let i=0;i<6;i++){ctx.save();ctx.rotate(i*Math.PI/3);ctx.beginPath();ctx.moveTo(0,-35*s);ctx.lineTo(24*s,-35*s);ctx.stroke();ctx.restore()}}
+ else if(id==='scarecrow'){ctx.strokeStyle='#5c4330';ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(0,20*s);ctx.lineTo(0,-22*s);ctx.moveTo(-18*s,-10*s);ctx.lineTo(18*s,-10*s);ctx.stroke();ctx.fillStyle='#85603e';ctx.fillRect(-10*s,-31*s,20*s,7*s)}
+ else if(id==='farmhouse'){ctx.fillStyle='#6e4029';ctx.fillRect(-22*s,-18*s,44*s,38*s);ctx.fillStyle='#a87943';ctx.beginPath();ctx.moveTo(-30*s,-18*s);ctx.lineTo(0,-42*s);ctx.lineTo(30*s,-18*s);ctx.closePath();ctx.fill();ctx.fillStyle='#33231a';ctx.fillRect(-6*s,1*s,12*s,19*s)}
+ else if(id==='telegraph'){ctx.strokeStyle='#4f392b';ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(0,20*s);ctx.lineTo(0,-36*s);ctx.moveTo(-15*s,-25*s);ctx.lineTo(15*s,-25*s);ctx.stroke();ctx.lineWidth=1.5*s;ctx.beginPath();ctx.moveTo(15*s,-25*s);ctx.lineTo(42*s,-20*s);ctx.stroke()}
+ else if(id==='signpost'){ctx.strokeStyle='#5c402e';ctx.lineWidth=5*s;ctx.beginPath();ctx.moveTo(0,20*s);ctx.lineTo(0,-28*s);ctx.stroke();ctx.fillStyle='#8d653d';ctx.fillRect(-5*s,-31*s,38*s,12*s)}
+ else if(id==='wagonWreck'){ctx.strokeStyle='#6e4a32';ctx.lineWidth=4*s;ctx.beginPath();ctx.arc(-12*s,6*s,11*s,0,Math.PI*2);ctx.arc(15*s,7*s,11*s,0,Math.PI*2);ctx.moveTo(-25*s,-10*s);ctx.lineTo(28*s,12*s);ctx.stroke()}
+ else if(id==='woodBridge'){ctx.fillStyle='#8b653f';for(let i=-3;i<=3;i++)ctx.fillRect((i*9-4)*s,-18*s,8*s,42*s);ctx.strokeStyle='#4d3526';ctx.lineWidth=3*s;ctx.beginPath();ctx.moveTo(-34*s,-14*s);ctx.lineTo(34*s,-14*s);ctx.moveTo(-34*s,20*s);ctx.lineTo(34*s,20*s);ctx.stroke()}
+ else if(id==='dock'){ctx.fillStyle='#80603f';for(let i=-2;i<=2;i++)ctx.fillRect((i*11-5)*s,-16*s,10*s,40*s);ctx.fillRect(-34*s,16*s,68*s,7*s);ctx.fillStyle='#4a3527';ctx.fillRect(-31*s,20*s,5*s,17*s);ctx.fillRect(26*s,20*s,5*s,17*s)}
+ else if(id==='rowboat'||id==='ferry'){ctx.fillStyle=id==='ferry'?'#795536':'#9b6f43';ctx.beginPath();ctx.ellipse(0,0,(id==='ferry'?34:24)*s,(id==='ferry'?11:8)*s,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#31231b';ctx.fillRect((-20)*s,-2*s,40*s,4*s);if(id==='ferry'){ctx.fillStyle='#c2a16d';ctx.fillRect(-19*s,-11*s,38*s,20*s)}}
+ else if(id==='reeds'){ctx.strokeStyle='#75835b';ctx.lineWidth=2*s;for(let i=-5;i<=5;i+=2){ctx.beginPath();ctx.moveTo(i*3*s,12*s);ctx.lineTo((i*3-2)*s,-15*s-Math.abs(i)*s);ctx.stroke()}}
+ ctx.restore()}
+function drawItemPreview(canvas,item){const ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);const t=terrains.find(x=>item.terrain.includes(x.id))||terrains[0];drawTerrain(ctx,t,w/2,h*.62,1.15);drawItem(ctx,item.id,w/2,h*.55,.78)}
+function renderTerrainTable(){const body=$('#terrainRows');body.innerHTML='';terrains.forEach((t,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td class="preview-cell"><canvas class="tile-canvas" width="190" height="118"></canvas></td><td><input class="field" data-terrain-name="${i}" value="${t.name}"></td><td><input class="field" data-terrain-code="${i}" value="${t.code}"><div class="badges">${['foothill','rockbody','peak'].includes(t.id)?'<span class="badge new">V51.5 新分层</span>':''}${t.id==='peak'?'<span class="badge block">稀少山顶</span>':''}</div></td><td><div class="color-row"><label class="color-box"><input type="color" data-base="${i}" value="${t.base}"><code>${t.base}</code></label><label class="color-box"><input type="color" data-edge="${i}" value="${t.edge}"><code>${t.edge}</code></label></div></td><td><select class="field" data-move="${i}">${['最快','标准','略慢','稍慢','中等偏慢','明显较慢','较慢','涉水较慢','通常阻挡','阻挡/需装备','接近平原'].map(x=>`<option ${x===t.move?'selected':''}>${x}</option>`).join('')}</select></td><td><div class="badges">${t.items.map(x=>`<span class="badge">${x}</span>`).join('')}</div></td><td><textarea class="field note" data-note="${i}">${t.note}</textarea></td><td><label><input type="checkbox" data-terrain-keep="${i}" ${t.keep?'checked':''}> 保留</label></td>`;body.appendChild(tr);drawTerrain(tr.querySelector('canvas').getContext('2d'),t,95,72,1.22)});bindTerrainInputs();updateSelects()}
+function renderItems(){const grid=$('#itemGrid'),filter=$('#categoryFilter').value;grid.innerHTML='';items.forEach((it,i)=>{if(filter!=='all'&&it.category!==filter)return;const card=document.createElement('article');card.className='item-card'+(it.keep?'':' disabled');card.innerHTML=`<canvas width="220" height="105"></canvas><h3><input class="field" data-item-name="${i}" value="${it.name}"></h3><small>${({plant:'植物',animal:'动物',rock:'岩石与山体',farm:'农场设施',road:'道路设施',water:'河流设施'})[it.category]} · 适用：${it.terrain.map(id=>terrains.find(t=>t.id===id)?.name||id).join('、')}</small><p>${it.desc}</p><label><input type="checkbox" data-item-keep="${i}" ${it.keep?'checked':''}> 保留此物件</label>`;grid.appendChild(card);drawItemPreview(card.querySelector('canvas'),it)});bindItemInputs();updateSelects()}
+function bindTerrainInputs(){$$('[data-terrain-name]').forEach(e=>e.oninput=()=>{terrains[+e.dataset.terrainName].name=e.value;changed()});$$('[data-terrain-code]').forEach(e=>e.oninput=()=>{terrains[+e.dataset.terrainCode].code=e.value;changed()});$$('[data-base]').forEach(e=>e.oninput=()=>{const i=+e.dataset.base;terrains[i].base=e.value;e.nextElementSibling.textContent=e.value;changed(true)});$$('[data-edge]').forEach(e=>e.oninput=()=>{const i=+e.dataset.edge;terrains[i].edge=e.value;e.nextElementSibling.textContent=e.value;changed(true)});$$('[data-move]').forEach(e=>e.onchange=()=>{terrains[+e.dataset.move].move=e.value;changed()});$$('[data-note]').forEach(e=>e.oninput=()=>{terrains[+e.dataset.note].note=e.value;changed()});$$('[data-terrain-keep]').forEach(e=>e.onchange=()=>{terrains[+e.dataset.terrainKeep].keep=e.checked;changed()})}
+function bindItemInputs(){$$('[data-item-name]').forEach(e=>e.oninput=()=>{items[+e.dataset.itemName].name=e.value;changed()});$$('[data-item-keep]').forEach(e=>e.onchange=()=>{items[+e.dataset.itemKeep].keep=e.checked;e.closest('.item-card').classList.toggle('disabled',!e.checked);changed()})}
+function updateSelects(){const ct=$('#comboTerrain'),ci=$('#comboItem'),nt=$('#neighborTerrain');const oldT=ct.value,oldI=ci.value,oldN=nt.value;ct.innerHTML=terrains.filter(t=>t.keep).map(t=>`<option value="${t.id}">${t.name}</option>`).join('');ci.innerHTML='<option value="none">不放主要物件</option>'+items.filter(i=>i.keep).map(i=>`<option value="${i.id}">${i.name}</option>`).join('');nt.innerHTML='<option value="none">不显示相邻地块</option>'+terrains.filter(t=>t.keep).map(t=>`<option value="${t.id}">${t.name}</option>`).join('');if([...ct.options].some(o=>o.value===oldT))ct.value=oldT;if([...ci.options].some(o=>o.value===oldI))ci.value=oldI;if([...nt.options].some(o=>o.value===oldN))nt.value=oldN;drawCombo()}
+function drawCombo(){const c=$('#comboCanvas'),ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);const t=terrains.find(x=>x.id===$('#comboTerrain').value)||terrains[0],it=items.find(x=>x.id===$('#comboItem').value),neighbor=terrains.find(x=>x.id===$('#neighborTerrain').value),density=+$('#density').value,road=$('#roadMode').value;ctx.fillStyle='#1d1510';ctx.fillRect(0,0,c.width,c.height);if(neighbor){drawTerrain(ctx,neighbor,530,180,2.2);ctx.globalAlpha=.45;drawTerrain(ctx,t,380,240,2.2);ctx.globalAlpha=1}else drawTerrain(ctx,t,380,240,2.6);if(road!=='none'){ctx.strokeStyle='#d0aa6d';ctx.lineWidth=24;ctx.lineCap='butt';ctx.beginPath();if(road==='straight'){ctx.moveTo(240,190);ctx.lineTo(520,300)}else if(road==='corner'){ctx.moveTo(235,190);ctx.lineTo(380,245);ctx.lineTo(520,190)}else{ctx.moveTo(240,190);ctx.lineTo(380,190);ctx.lineTo(380,245);ctx.lineTo(520,245)}ctx.stroke();ctx.strokeStyle='#76563c';ctx.lineWidth=3;ctx.setLineDash([10,9]);ctx.stroke();ctx.setLineDash([])}if(it&&density>0){const pos=[[380,210],[335,250],[430,255]];for(let i=0;i<density;i++)drawItem(ctx,it.id,pos[i][0],pos[i][1],1.45)}ctx.fillStyle='#e8c980';ctx.font='900 21px Georgia,"Microsoft YaHei"';ctx.fillText(t.name,24,34);ctx.fillStyle='#bca47e';ctx.font='12px Microsoft YaHei';ctx.fillText(it?`${it.name} × ${density}`:'无主要物件',24,57);ctx.fillText(road==='diagonal-fixed'?'对角道路已补正交格':road==='corner'?'直角道路':road==='straight'?'直路':'无道路',24,78)}
+function changed(redraw=false){$('#status').textContent='设定已修改，尚未导出';if(redraw){renderTerrainTable();renderItems()}updateJSON();drawCombo()}
+function currentData(){return{version:'V51.5-design',generatedAt:new Date().toISOString(),rules:{normalMapSizes:{easy:56,normal:60,hard:64},normalMapShapes:['square','circle','hex','mesa'],mountainRule:'每个约4x4山群只保留1~2个peak，其余转rockbody，外围转foothill',singlePrimaryItemPerTile:true,diagonalRoadRule:'00→11→22 必须补 01、12 或 10、21',riverFacilities:'宽河生成码头/小船/渡船；窄河优先木桥'},terrains,items}}
+function updateJSON(){$('#jsonOutput').value=JSON.stringify(currentData(),null,2)}
+function saveLocal(){localStorage.setItem('dustDebtV515Design',JSON.stringify({terrains,items}));$('#status').textContent='已保存到当前浏览器'}
+function loadLocal(){try{const d=JSON.parse(localStorage.getItem('dustDebtV515Design'));if(d?.terrains&&d?.items){terrains=d.terrains;items=d.items}}catch(e){}}
+function resetAll(){if(!confirm('恢复初始设定？当前修改会被清除。'))return;terrains=structuredClone(terrainDefaults);items=structuredClone(itemDefaults);localStorage.removeItem('dustDebtV515Design');renderTerrainTable();renderItems();updateJSON();$('#status').textContent='已恢复初始设定'}
+function exportJSON(){const blob=new Blob([JSON.stringify(currentData(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='尘土与债务_V51.5_地块与物件设定.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);$('#status').textContent='JSON 已导出'}
+$('#categoryFilter').onchange=renderItems;$('#saveBtn').onclick=saveLocal;$('#resetBtn').onclick=resetAll;$('#exportBtn').onclick=exportJSON;$('#comboTerrain').onchange=drawCombo;$('#comboItem').onchange=drawCombo;$('#neighborTerrain').onchange=drawCombo;$('#roadMode').onchange=drawCombo;$('#density').oninput=()=>{$('#densityValue').textContent=$('#density').value;drawCombo()};$('#jsonOutput').oninput=()=>$('#status').textContent='JSON 文本已手动修改（不会自动反写表格）';
+loadLocal();renderTerrainTable();renderItems();updateJSON();
+</script>
+</body>
+</html>
