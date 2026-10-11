@@ -1,0 +1,146 @@
+[
+  {
+    "file": "world-map.webp",
+    "category": "adventure",
+    "title_en": "🗺️ Read the land",
+    "title_zh": "🗺️ 看地形，选路线",
+    "caption_en": "Ride the roads, cross rivers and watch weather, stamina and supplies before choosing your next destination.",
+    "caption_zh": "沿着道路策马，穿越河流；把天气、体力和补给都算进下一段旅程。",
+    "sha256": "144b6b5d6aec3b0e4f499176f4eb2b69aaeac3108cec070ac6b3b92848509668"
+  },
+  {
+    "file": "bounty-board.webp",
+    "category": "adventure",
+    "title_en": "📜 Pick your quarry",
+    "title_zh": "📜 从悬赏令挑选目标",
+    "caption_en": "Study the wanted posters, compare the rewards and choose whose trail you will follow.",
+    "caption_zh": "读通缉令，比较赏金与目标信息，决定这趟出门追谁。",
+    "sha256": "8f085b1da9072383dc1db9e34726134c4f0c4ffeb3e66acc328d560efbaecb4a"
+  },
+  {
+    "file": "gold-rush.webp",
+    "category": "adventure",
+    "title_en": "💎 A fortune beyond town",
+    "title_zh": "💎 去荒野寻找一笔横财",
+    "caption_en": "Enter a larger frontier with treasure hunters, settlements and a live leaderboard. Getting rich also means getting home.",
+    "caption_zh": "走进有聚落、有盗宝人动态排行的大地图；找到财富之后，还得活着把它带回家。",
+    "sha256": "cc166b32e52511d9fcfb7eb1fb6b620aca6156ed0d071ef00061e0dceab62e0f"
+  },
+  {
+    "file": "treasure-map.webp",
+    "category": "adventure",
+    "title_en": "🧭 Follow a real clue",
+    "title_zh": "🧭 藏宝图就是任务线索",
+    "caption_en": "Carry a map tied to one treasure. Found gold, gems and loot only become yours after returning to your starting town.",
+    "caption_zh": "藏宝图绑定独一份宝藏；挖出的金币、宝石和物资需要回出生城镇结算，才真正落袋。",
+    "sha256": "81c93cb3aec3338c1e10cbbcd025798ff5e9b80cf82d78dfb246d7df8d554243"
+  },
+  {
+    "file": "endless-night.webp",
+    "category": "adventure",
+    "title_en": "🕯️ When night will not end",
+    "title_zh": "🕯️ 永夜，另一种边境压力",
+    "caption_en": "Try the Endless Night expedition and its changing fugitive activity. Darkness changes the mood of the same frontier.",
+    "caption_zh": "进入永夜远征，观察动态生死榜与亡命徒活动；熟悉的荒野在黑夜里换了一副面孔。",
+    "sha256": "43e83b4fe422bd5f48fab3097e45d0865d56b0924f1e2475e225f07cdbe3c468"
+  },
+  {
+    "file": "mount-market.webp",
+    "category": "mounts",
+    "title_en": "🐎 Choose your travelling companion",
+    "title_zh": "🐎 挑一匹陪你闯荒野的坐骑",
+    "caption_en": "Compare animals and their prices in the mount market before committing your hard-earned cash.",
+    "caption_zh": "在牲口市场看坐骑、比价格；一笔买卖，会改变你以后怎么赶路。",
+    "sha256": "a979a6e37102b9aa200eb8bb0785fae5b26aaa0535a2c2b79593d4366b0ba695"
+  },
+  {
+    "file": "stable.webp",
+    "category": "mounts",
+    "title_en": "🌾 A place for your mounts",
+    "title_zh": "🌾 你的马厩，你的队伍",
+    "caption_en": "Visit the stable to manage your animals and inspect the companion that carries you into the wilderness.",
+    "caption_zh": "在马厩管理已有牲口，查看陪你出门的伙伴；坐骑也是边境生活的一部分。",
+    "sha256": "564d4c52344c8222a5efea418afb42763ba7bf133319ce794373270fe3b8920e"
+  },
+  {
+    "file": "race-selection.webp",
+    "category": "fortune",
+    "title_en": "🏇 Place your faith in a horse",
+    "title_zh": "🏇 赛前，看好哪匹马？",
+    "caption_en": "Compare runners in the race hall, then decide whether the odds deserve your wager.",
+    "caption_zh": "先看参赛马，再决定把筹码押在哪里；赔率与直觉，这次你信谁？",
+    "sha256": "0b02d7f82a295708fc68b0474123d339f355948e814d2596675281853484a03c"
+  },
+  {
+    "file": "race-result.webp",
+    "category": "fortune",
+    "title_en": "🏆 The finish has a price",
+    "title_zh": "🏆 第一声马蹄属于你",
+    "caption_en": "A captured winning race: the podium, wager and net payout appear together. A good pick can turn the day around.",
+    "caption_zh": "这场实机赛马押中了冠军：领奖台、下注和净收益一起揭晓，选对一次也能翻身。",
+    "sha256": "c55c68a311d6eaeb005b70d3dd477991d28b14ecb1d335180f2d4f64379cb783"
+  },
+  {
+    "file": "casino.webp",
+    "category": "fortune",
+    "title_en": "🎲 One more table?",
+    "title_zh": "🎲 赌场里，再来一局？",
+    "caption_en": "The casino offers several ways to tempt your luck. Choose a table while keeping the debt ledger in mind.",
+    "caption_zh": "赌场里有多种玩法可选；想试试运气，也别忘了月底那本债务账。",
+    "sha256": "3943983c49cc11f25fd93df6f1fe86d799be2a7b1028a8caca8a9fca777783d0"
+  },
+  {
+    "file": "roulette.webp",
+    "category": "fortune",
+    "title_en": "🎡 The wheel decides",
+    "title_zh": "🎡 轮盘转起来，结果会怎样",
+    "caption_en": "Take a seat at roulette and make your bet. Fortune moves quickly; your next repayment is still waiting.",
+    "caption_zh": "坐上轮盘桌，选定你的下注；运气会转，下一次还款日也会来。",
+    "sha256": "16d22faf6b47e8b7a6de33c18c0f290d4dadd7e8bfa3c947081901dbf719f0a0"
+  },
+  {
+    "file": "revolver-table.webp",
+    "category": "fortune",
+    "title_en": "⚔️ A much darker gamble",
+    "title_zh": "⚔️ 不只是筹码的赌局",
+    "caption_en": "The revolver table brings opponents, items and a life-or-death wager into one tense scene.",
+    "caption_zh": "左轮赌桌上有对手、有道具，还有性命作筹码；每一步都比普通赌局更紧张。",
+    "sha256": "e30c656480b85d851cf16dffa93426b239185fa9f3fc704e3f3e2b6b6a1c770a"
+  },
+  {
+    "file": "market.webp",
+    "category": "fortune",
+    "title_en": "💰 Another way to earn",
+    "title_zh": "💰 不出城，也能谋生",
+    "caption_en": "Visit the financial market to inspect prices and trading options. Frontier life has more than one route to money.",
+    "caption_zh": "去金融市场查看行情与交易选择；接赏金、去淘金之外，也能在城里寻找赚钱机会。",
+    "sha256": "c2c35935385d112d71c3a77d3662044933a23b1afe96e91319408bdee441c697"
+  },
+  {
+    "file": "wardrobe.webp",
+    "category": "tavern",
+    "title_en": "🧥 Give the hunter a look",
+    "title_zh": "🧥 给猎人换一身行头",
+    "caption_en": "Customize the character and mount appearance before stepping back into the tavern.",
+    "caption_zh": "在角色与坐骑装饰界面挑选造型，再带着自己的风格回到酒馆。",
+    "sha256": "52184c29887be6d4a2afc9416d50b0ca1537cae81f4050ddde73693e7bd4afbd"
+  },
+  {
+    "file": "tavern-decoration.webp",
+    "category": "tavern",
+    "title_en": "🏰 Make the tavern your own",
+    "title_zh": "🏰 把酒馆布置成你的据点",
+    "caption_en": "Use the in-game decoration editor to select and arrange objects in the 3D tavern.",
+    "caption_zh": "在游戏内的布置工具中选择、摆放物件；3D 酒馆可以成为你亲手安排的据点。",
+    "sha256": "a63b8ae3c1179fe282c948de999f0e34435bdb674f1c776099c5833cf1d18650"
+  },
+  {
+    "file": "tavern.webp",
+    "category": "tavern",
+    "title_en": "🍺 Every journey starts here",
+    "title_zh": "🍺 一切冒险，从酒馆开始",
+    "caption_en": "Return to the warm lamps, fireplace and notices. Plan the next job while the calendar and debt keep moving.",
+    "caption_zh": "回到灯火、壁炉和告示旁，筹划下一单生意；日子与债务不会等人。",
+    "sha256": "97e106880ff88b27a3edd49e6dd5dd2454246ed2efb41afcfc66e62e81ee77e2"
+  }
+]
