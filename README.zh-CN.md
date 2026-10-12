@@ -10,7 +10,7 @@
 
 一款可以在 Chrome 直接游玩的西部题材游戏，这里用中世纪冒险手稿的风格讲述它。接赏金，骑马闯荒野，循着藏宝图寻宝，再回到自己布置的酒馆。旅途之间，去赛马场、赌场或市场试试身手；月底还得面对债主。
 
-**[⚔️ Chrome 在线试玩](https://cnsdqd-dyb.github.io/dust-and-debt/zh.html) · [📦 下载游戏](https://github.com/cnsdqd-dyb/dust-and-debt/releases/tag/v51.5.2) · [📚 全部 38 份原件](VERSIONS.md)**
+**[⚔️ 中文原版](versions/%E5%B0%98%E5%9C%9F%E4%B8%8E%E5%80%BA%E5%8A%A1_V51.5.2_%E9%81%93%E8%B7%AF%E5%85%AD%E5%90%91%E8%B5%84%E6%BA%90%E4%B8%8E%E5%9B%BE%E5%85%A5%E5%8F%A3%E4%BF%AE%E5%A4%8D%E7%89%88.html) · [🌐 English Beta](editions/dust-and-debt-v51.5.2-en-beta.html) · [📦 下载游戏](https://github.com/cnsdqd-dyb/dust-and-debt/releases/tag/v51.5.2) · [📚 全部 38 份原件](VERSIONS.md)**
 
 推荐版本：**V51.5.2** · 游戏界面：**中文** · 介绍页面：**English / 简体中文** · 推荐电脑 Chrome 横屏体验。
 

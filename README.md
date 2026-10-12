@@ -10,9 +10,9 @@
 
 A Western browser game told here as an adventurer’s old manuscript. Take a bounty, saddle a horse, follow a treasure map and return to a tavern of your own. Between journeys, try the race hall, casino or market—then face the debt at the end of the month.
 
-**[⚔️ Play in Chrome](https://cnsdqd-dyb.github.io/dust-and-debt/) · [📦 Download](https://github.com/cnsdqd-dyb/dust-and-debt/releases/tag/v51.5.2) · [📚 All 38 originals](VERSIONS.md)**
+**[⚔️ Play English Beta](editions/dust-and-debt-v51.5.2-en-beta.html) · [中文原版](versions/%E5%B0%98%E5%9C%9F%E4%B8%8E%E5%80%BA%E5%8A%A1_V51.5.2_%E9%81%93%E8%B7%AF%E5%85%AD%E5%90%91%E8%B5%84%E6%BA%90%E4%B8%8E%E5%9B%BE%E5%85%A5%E5%8F%A3%E4%BF%AE%E5%A4%8D%E7%89%88.html) · [📦 Download](https://github.com/cnsdqd-dyb/dust-and-debt/releases/tag/v51.5.2) · [📚 All 38 originals](VERSIONS.md)**
 
-Recommended build: **V51.5.2** · Game interface: **Chinese** · Introduction: **English / 简体中文** · Best on desktop Chrome.
+Recommended build: **V51.5.2** · Game: **English Beta / 中文原版** · Best on desktop Chrome. The English Beta covers core routes; rare event text may remain Chinese.
 
 ---
 
